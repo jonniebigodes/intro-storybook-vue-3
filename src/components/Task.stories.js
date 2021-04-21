@@ -1,14 +1,14 @@
 import Task from "./Task.vue";
-import { action } from '@storybook/addon-actions';
+import { action } from "@storybook/addon-actions";
 export default {
   component: Task,
   // Our exports that end in "Data" are not stories.
   excludeStories: /.*Data$/,
   title: "Task",
-  argTypes:{
-    onPinTask:{},
-    onArchiveTask:{}
-  }
+  argTypes: {
+    onPinTask: {},
+    onArchiveTask: {},
+  },
 };
 
 export const actionsData = {
@@ -19,7 +19,7 @@ export const actionsData = {
 const Template = (args) => ({
   components: { Task },
   setup() {
-    return { args };
+    return { args, ...actionsData };
   },
   template: '<Task v-bind="args" />',
 });
