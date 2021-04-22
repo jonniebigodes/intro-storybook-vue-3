@@ -42,6 +42,7 @@ export default createStore({
       { id: '3', title: 'Something else', state: 'TASK_INBOX' },
       { id: '4', title: 'Something again', state: 'TASK_INBOX' },
     ],
+    error:false,
   },
   mutations:{
     ARCHIVE_TASK(state, id) {
@@ -50,6 +51,12 @@ export default createStore({
     PIN_TASK(state, id) {
       state.tasks.find(task => task.id === id).state = 'TASK_PINNED';
     },
+    SET_ERROR(state){
+      state.error=true
+    },
+    CLEAR_ERROR(state){
+      state.error=false
+    }
   },
   actions:{
     archiveTask({ commit }, id) {
@@ -58,5 +65,8 @@ export default createStore({
     pinTask({ commit }, id) {
       commit('PIN_TASK', id);
     },
+    isError({commit}){
+      commit('SET_ERROR')
+    }
   }
 })
