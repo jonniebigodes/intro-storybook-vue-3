@@ -19,7 +19,7 @@
     "lint": "vue-cli-service lint",
     "storybook": "start-storybook -p 6006 --no-manager-cache",
     "build-storybook": "build-storybook",
-    "serve-prod":"http-server storybook-static"
+    "serve-prod": "http-server storybook-static"
   },
   "dependencies": {
     "core-js": "^3.6.5",
